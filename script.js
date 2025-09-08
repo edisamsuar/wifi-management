@@ -15,7 +15,72 @@
                 username: "edi", 
                 password: "edi", 
                 displayName: "Tgk Edi Samsuar" 
-            }
+            },
+             { 
+                username: "arief", 
+                password: "arief123", 
+                displayName: "Tgk Muhammad Arief Fazillah" 
+            },
+             { 
+                username: "haikalfkr", 
+                password: "haikal123", 
+                displayName: "Tgk Fikri Haikal" 
+            },
+             { 
+                username: "rajamun", 
+                password: "raja123", 
+                displayName: "Tgk Raja Munandar" 
+            },
+             { 
+                username: "kang", 
+                password: "kang123", 
+                displayName: "Tgk Hendra Saputra" 
+            },
+             { 
+                username: "iqbal", 
+                password: "iqbal123", 
+                displayName: "Tgk Iqbal Luriansyah" 
+            },
+             { 
+                username: "munazir", 
+                password: "munazir123", 
+                displayName: "Tgk Munazir" 
+            },
+             { 
+                username: "rahmat", 
+                password: "rahmat123", 
+                displayName: "Tgk Rahmatul Bahri" 
+            },
+             { 
+                username: "bhgia", 
+                password: "bhgia123", 
+                displayName: "Tgk Bahgia" 
+            },
+             { 
+                username: "diaul", 
+                password: "diaul123", 
+                displayName: "Tgk Diaul Haq" 
+            },
+             { 
+                username: "atim", 
+                password: "atim123", 
+                displayName: "Tgk M. Yatim" 
+            },
+             { 
+                username: "ahyar", 
+                password: "ahyar123", 
+                displayName: "Tgk Ahyar Rizki" 
+            },
+             { 
+                username: "mizzy", 
+                password: "mizzy123", 
+                displayName: "Tgk Miftahul Fauzi" 
+            },
+             { 
+                username: "dzikri", 
+                password: "dzikriar123", 
+                displayName: "Tgk Dzikri Arrahman" 
+            },
         ];
 
         // Fungsi untuk menangani login
