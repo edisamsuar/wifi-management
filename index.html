@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - WiFi Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="login-container" id="login-page">
+        <div class="login-form">
+            <h1><i class="fas fa-wifi"></i> WiFi Management</h1>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Masukkan username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Masukkan password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <div class="error-message" id="error-message">
+                    Username atau password salah!
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+    <!-- Dashboard Page -->
+    <div class="dashboard-page" id="dashboard-page">
+        <header>
+            <div class="header-container">
+                <div class="logo">
+                    <h1>Informasi Pengguna WiFi</h1>
+                    <p>Manajemen Keuangan dan Pelanggan</p>
+                </div>
+                
+                <div class="user-display-header">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="user-display-header">Admin</span>
+                </div>
+                
+                <div class="nav-container">
+                    <ul class="desktop-menu">
+                        <li><a href="#"><i class="fas fa-home"></i> Beranda</a></li>
+                        <li><a href="#"><i class="fas fa-info-circle"></i> Tentang</a></li>
+                        <li><button class="logout-btn" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                    </ul>
+                    
+                    <button class="hamburger" id="hamburger-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                    <ul class="mobile-menu" id="mobile-menu">
+                        <li><a href="#"><i class="fas fa-home"></i> Beranda</a></li>
+                        <li><a href="#"><i class="fas fa-info-circle"></i> Tentang</a></li>
+                        <li><button class="logout-btn" id="logout-btn-mobile"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Summary Section -->
+            <div class="summary">
+                <div class="summary-item saldo card">
+                    <h3>Saldo</h3>
+                    <p id="totalTerkumpul">Rp 0,00</p>
+                </div>
+                <div class="summary-item tagihan card">
+                    <h3>Tagihan Bulan Ini</h3>
+                    <p id="tagihanBulanIni">Rp 455.285</p>
+                </div>
+                <div class="summary-item kurang card">
+                    <h3>Sisa dibutuhkan</h3>
+                    <p id="sisaDibutuhkan">Rp 0,00</p>
+                </div>
+            </div>
+
+            <!-- Daftar Pelanggan -->
+            <div class="card">
+                <h2 class="card-title">Daftar Pelanggan</h2>
+                
+                <div class="controls">
+                    <input type="text" class="search-box" placeholder="Cari nama pelanggan..." id="searchInput">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Semua</button>
+                        <button class="filter-btn" data-filter="lunas">Sudah Bayar</button>
+                        <button class="filter-btn" data-filter="tunggak">Belum Bayar</button>
+                     
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table id="invoiceTable">
+                        <thead>
+                            <tr>
+                                <th data-sort="name">Nama Pelanggan</th>
+                                <th data-sort="amount">Tagihan Bulanan</th>
+                                <th data-sort="status">Status</th>
+                            </tr>
+                        </thead>
+
+                        <!--  <td class="status-tunggak">Belum</td> -->
+                          <!-- <td class="status-lunas">Lunas</td> -->
+                           <!-- <td class="status-proses">Proses</td> -->
+                        <tbody>
+                            <tr style="display: none;">
+                                <td>Kas Lama</td>
+                                <td >Rp 32.000</td>
+                                <td class="status-lunas">Lunas</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk Ahyar Rizki</td>
+                                <td >Rp 15.000</td>
+                                <td class="status-lunas">Lunas</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk Arief Fazillah</td>
+                                <td>Rp 30.000</td>
+                                <td class="status-tunggak">Belum</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk Bahgia</td>
+                                <td>Rp 30.000</td>
+                                <td class="status-tunggak">Belum</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk Diaul Haq</td>
+                                <td>Rp 30.000</td>
+                               <td class="status-tunggak">Belum</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk Dzikri Arrahman</td>
+                                <td>Rp 30.000</td>
+                                <td class="status-tunggak">Belum</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk Edi Samsuar</td>
+                                <td>Rp 30.000</td>
+                                <td class="status-tunggak">Belum</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk Fikri Haikal</td>
+                                <td>Rp 30.000</td>
+                                <td class="status-tunggak">Belum</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk Hendra Saputra</td>
+                                <td>Rp 30.000</td>
+                                <td class="status-tunggak">Belum</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk Iqbal Luriansyah</td>
+                                <td>Rp 30.000</td>
+                                <td class="status-tunggak">Belum</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk M Yatim</td>
+                                <td>Rp 30.000</td>
+                                <td class="status-tunggak">Belum</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk Miftahul Fauzi</td>
+                                <td>Rp 30.000</td>
+                                <td class="status-tunggak">Belum</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk Munazir</td>
+                                <td>Rp 15.000</td>
+                                <td class="status-tunggak">Belum</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk Rahmatul Bahri</td>
+                                <td>Rp 30.000</td>
+                                <td class="status-tunggak">Belum</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk Raja Munandar</td>
+                                <td>Rp 30.000</td>
+                                <td class="status-tunggak">Belum</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk Saryulis</td>
+                                <td>Rp 30.000</td>
+                                <td class="status-tunggak">Belum</td>
+                            </tr>
+                            <tr>
+                                <td>Tgk Zawil</td>
+                                <td>Rp 30.000</td>
+                                <td class="status-tunggak">Belum</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="summary-pelanggan">
+                    <div class="summary-card total-card">
+                        <h3>Total Tagihan</h3>
+                        <p id="totalAmount">Rp0,00</p>
+                    </div>
+                    <div class="summary-card lunas-card">
+                        <h3>Jumlah Sudah Bayar</h3>
+                        <p id="lunasCount">0</p>
+                    </div>
+                    <div class="summary-card tunggak-card">
+                        <h3>Jumlah Belum Bayar</h3>
+                        <p id="tunggakCount">0</p>
+                    </div>
+                    <div class="summary-card proses-card">
+                        <h3>Jumlah Proses</h3>
+                        <p id="prosesCount">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sumber Saldo -->
+            <div class="card">
+                <h2 class="card-title">History</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Keterangan</th>
+                                <th>Jumlah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>08 okt 2025</td>
+                                <td>TF Tgk Ahyar Rizki</td>
+                                <td style="color: green;">Rp 15.000 </td>
+                                
+                            </tr>
+                            <tr>
+                                <td> - </td>
+                                <td>Kas Lama</td>
+                                <td style="color: green;">Rp 32.000 </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+             <div class="card">
+                <h2 class="card-title">Indentity WiFi Active:</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>SSID</th>
+                                <th>Password</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                              <td>Net-Home 5G</td>
+                                <td>******</td>
+                            </tr>
+                            <tr>
+                                <td>Net-Home</td>
+                                <td>******</td>
+                            </tr>
+                             <tr>
+                             <tr>
+                                <td>Net-Studio</td>
+                                <td>******</td>
+                            </tr>
+                        </tbody>
+                    </table>
+        </div>
+        
+ </div>
+
+        </div>
+        <footer>
+            <div class="container">
+                <p>&copy;2025 Net-Studio WiFi Management</p>
+                
+            </div>
+        </footer>
+   
+    <script src="script.js">
+    </script>
+</body>
+</html>
