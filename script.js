@@ -6,6 +6,11 @@
                 password: "password123", 
                 displayName: "Administrator" 
             },
+                 { 
+                username: "saryulis", 
+                password: "saryulis123", 
+                displayName: "Tgk Saryulis" 
+            },
             { 
                 username: "user", 
                 password: "user123", 
@@ -389,3 +394,4 @@
                 showLogin();
             }
         });
+
