@@ -467,7 +467,59 @@
            .payment-methods {
                 grid-template-columns: 1fr;
             }
+              .qr-section {
+                flex-direction: column;
+            }
         }
+          .qr-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+            margin-top: 40px;
+            padding: 25px;
+            background-color: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .qr-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .qr-info h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .qr-info p {
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .qr-code {
+            flex-shrink: 0;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+        
+        .qr-code img {
+            width: 180px;
+            height: 180px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .qr-code p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
     .chard {
         background-color: #6363632f;
         width: 100%;
