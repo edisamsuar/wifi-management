@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - WiFi Management</title>
-    <head>
-  <link rel="icon" href="pngimg.com - wifi_PNG62305.png" type="image/png">
-</head>
+      <link rel="icon" href="pngimg.com - wifi_PNG62305.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -110,7 +108,7 @@
                         </thead>
 
                         <!--  <td class="status-tunggak">Belum</td> -->
-                          <!-- <td class="status-lunas">Lunas</td> -->
+                          <!-- <td class="status-lunas">Sudah</td> -->
                            <!-- <td class="status-proses">Proses</td> -->
                         <tbody>
                             <tr style="display: none;">
@@ -244,7 +242,6 @@
                                 <td>08 okt 2025</td>
                                 <td>TF Tgk Ahyar Rizki</td>
                                 <td style="color: green;">Rp 15.000 </td>
-                                
                             </tr>
                             <tr>
                                 <td> - </td>
@@ -284,23 +281,72 @@
                     </table>
         </div>
         
- </div>
-
         </div>
-        <footer>
+        </div>
+ 
+    <div class="card">
+        <h2>Metode Pembayaran</h2>
+        <div class="infobyr">
+              <h3><i class="fas fa-bank"></i> Bank Transfer</h3>
+            <div class="payment-method">
+                           
+                            <div class="payment-info">
+                                
+                                <!-- <h3><i class="fas fa-bank"></i> Bank Transfer</h3> -->
+                                <div class="account-number" onclick="copyToClipboard('7190360347', 'Rekening BSI')">
+                                    <span><strong>BSI</strong></span> <br>
+                                    <span>7190360347</span>
+                                    <button class="copy-btn"><i class="fas fa-copy"></i></button>
+                                </div>
+                                <div class="account-name">A/N EDI SAMSUAR</div>
+                            </div>
+            </div>
+
+             <div class="payment-method">
+                           
+                            <div class="payment-info">
+                                
+                              
+                               <div class="account-number" onclick="copyToClipboard('901994799040', 'Rekening SeaBank')">
+                                    <span><strong>SEABANK</strong></span> <br>
+                                    <span>901994799040</span>
+                                    <button class="copy-btn"><i class="fas fa-copy"></i></button>
+                                </div>
+                                <div class="account-name">A/N EDI SAMSUAR</div>
+                            </div>
+            </div>
+    <div class="payment-method">
+                           
+                            <div class="payment-info">
+                                
+                              
+                              <div class="account-number" onclick="copyToClipboard('901994799040', 'Rekening BANK ACEH')">
+                                    <span><strong>BANK ACEH</strong></span> <br>
+                                    <span>901994799040</span>
+                                    <button class="copy-btn"><i class="fa fa-copy"></i></button>
+                                </div>
+                                <div class="account-name">A/N EDI SAMSUAR</div>
+                            </div>
+            </div>
+            
+                           </div> 
+                        </div>
+                    </div>
+        </div>
+       
+    </div>
+
+<footer>
             <div class="container">
                 <p>&copy;2025 Net-Studio WiFi Management</p>
                 
             </div>
         </footer>
-   
+     <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Nomor rekening berhasil disalin!</span>
+    </div>
     <script src="script.js">
     </script>
 </body>
-
 </html>
-
-
-
-
-
