@@ -6,11 +6,6 @@
                 password: "password123", 
                 displayName: "Administrator" 
             },
-                 { 
-                username: "saryulis", 
-                password: "saryulis123", 
-                displayName: "Tgk Saryulis" 
-            },
             { 
                 username: "user", 
                 password: "user123", 
@@ -394,4 +389,31 @@
                 showLogin();
             }
         });
-
+        
+        // Fungsi untuk menyalin teks ke clipboard
+        function copyToClipboard(text, provider) {
+            // Membuat textarea sementara untuk menyalin teks
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            
+            // Menampilkan notifikasi
+            showToast(`Nomor ${provider} berhasil disalin!`);
+        }
+        
+        // Fungsi untuk menampilkan toast notifikasi
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            
+            // Sembunyikan toast setelah 3 detik
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
