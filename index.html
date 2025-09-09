@@ -1,825 +1,197 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - WiFi Management</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-      <link rel="icon" href="pngimg.com - wifi_PNG62305.png" type="image/png">
+    <title>Tentang</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+          
+        body {
+              background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0%;
+            padding: 1rem;
+            
+        }
+        .bodi {
+             background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+             width: 100%;
+             height: 100vh;
+        }
+          .card {
+            background: rgb(240, 240, 240);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+           margin: 3%;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .konten {
+            text-align: justify;
+            text-align: center;
+            padding: 1rem;
+             background: rgb(255, 255, 255);
+            border-radius: 10px;
+            box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.308);
+            margin-bottom: 10%;
+        }
+          .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 30px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .btn-kembali {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 16px 32px;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+            z-index: 1;
+        }
+        
+        .btn-kembali:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.6);
+        }
+        
+        .btn-kembali::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff8e53, #ff6b6b);
+            z-index: -1;
+            transition: opacity 0.4s ease;
+            opacity: 0;
+        }
+        
+        .btn-kembali:hover::before {
+            opacity: 1;
+        }
+        
+        .btn-kembali i {
+            margin-right: 10px;
+            transition: transform 0.4s ease;
+        }
+        
+        .btn-kembali:hover i {
+            transform: translateX(-5px);
+        }
+        
+        /* Efek ripple saat diklik */
+        .btn-kembali::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: scale(0);
+            opacity: 0;
+            z-index: -1;
+        }
+        
+        .btn-kembali:active::after {
+            animation: ripple 0.6s ease-out;
+        }
+        
+        @keyframes ripple {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsivitas */
+        @media (max-width: 576px) {
+            .container {
+                padding: 25px;
+            }
+            
+            .btn-kembali {
+                padding: 14px 26px;
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Login Page -->
-    <div class="login-container" id="login-page">
-        <div class="login-form">
-            <h1><i class="fas fa-wifi"></i> WiFi Management</h1>
-            
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" placeholder="Masukkan username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Masukkan password" required>
-                </div>
-                <button type="submit" class="login-btn">Login</button>
-                <div class="error-message" id="error-message">
-                    Username atau password salah!
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+    <!-- <div class="bodi">
+        <div class="card">
+            <h2 style="text-align: center;">Tentang Halaman ini</h2>
+            <div class="konten">
+                <p>Halaman ini dibuat oleh<br>Admin pengelola System WiFi<br><b>(Tgk Edi Samsuar)</b></p>
+                 <p>Guna untuk memantau aktivitas penggunaan WiFi
+                    seperti penggunaan Dana, Info Saldo, Dan Informasi pelanggan yang telah membayar dan yang belum membayar
+                </p>
+               <p>Halaman ini tidak terkoneksi MySql Database dan tidak di Hosting ke hostinger berbayar hanya di publish ke halaman <a href="https://github.com/edisamsuar">github.com</a> milik Tgk Edi Samsuar. sehingga Perubahan pada halaman ini harus dilakukan secara manual oleh Admin,  </p>
 
-    <!-- Dashboard Page -->
-    <div class="dashboard-page" id="dashboard-page">
-        <header>
-            <div class="header-container">
-                <div class="logo">
-                    <h1>Informasi Pengguna WiFi</h1>
-                    <p>Manajemen Keuangan dan Pelanggan</p>
-                </div>
-                
-                <div class="user-display-header">
-                    <i class="fas fa-user-circle"></i>
-                    <span id="user-display-header">Admin</span>
-                </div>
-                
-                <div class="nav-container">
-                    <ul class="desktop-menu">
-                        <li><a href="#"><i class="fas fa-home"></i> Beranda</a></li>
-                        <li><a href="tentang.html"><i class="fas fa-info-circle"></i> Tentang</a></li>
-                        <li><button class="logout-btn" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
-                    </ul>
-                    
-                    <button class="hamburger" id="hamburger-btn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    
-                    <ul class="mobile-menu" id="mobile-menu">
-                        <li><a href="#"><i class="fas fa-home"></i> Beranda</a></li>
-                        <li><a href="tentang.html"><i class="fas fa-info-circle"></i> Tentang</a></li>
-                        <li><button class="logout-btn" id="logout-btn-mobile"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
-                    </ul>
-                </div>
             </div>
-        </header>
+        </div>
+    </div> -->
 
         <div class="container">
-            <!-- Summary Section -->
-            <div class="summary">
-                <div class="summary-item saldo card">
-                    <h3>Saldo</h3>
-                    <p id="totalTerkumpul">Rp 0,00</p>
-                </div>
-                <div class="summary-item tagihan card">
-                    <h3>Tagihan Bulan Ini</h3>
-                    <p id="tagihanBulanIni">Rp 455.285</p>
-                </div>
-                <div class="summary-item kurang card">
-                    <h3>Sisa dibutuhkan</h3>
-                    <p id="sisaDibutuhkan">Rp 0,00</p>
-                </div>
+        <h2 style="text-align: center;">Tentang Halaman ini</h2>
+            <div class="konten">
+                <h4>Halaman ini dibuat oleh<br>Admin pengelola System WiFi</h4><br>
+                <p><b>(Tgk Edi Samsuar)</b></p>
+                 <p>Guna untuk memantau aktivitas penggunaan WiFi
+                    seperti penggunaan Dana, Info Saldo, Dan Informasi pelanggan yang telah membayar dan yang belum membayar
+                </p>
+               <p>Halaman ini tidak terkoneksi MySql Database dan tidak di Hosting ke hostinger berbayar hanya di publish ke halaman <a href="https://github.com/">www.github.com</a> milik Tgk Edi Samsuar. sehingga Perubahan pada halaman ini harus dilakukan secara manual oleh Admin,  </p>
             </div>
-
-            <!-- Daftar Pelanggan -->
-            <div class="card">
-                <h2 class="card-title">Daftar Pelanggan</h2>
-                
-                <div class="controls">
-                    <input type="text" class="search-box" placeholder="Cari nama pelanggan..." id="searchInput">
-                    <div class="filter-buttons">
-                        <button class="filter-btn active" data-filter="all">Semua</button>
-                        <button class="filter-btn" data-filter="lunas">Sudah Bayar</button>
-                        <button class="filter-btn" data-filter="tunggak">Belum Bayar</button>
-                     
-                    </div>
-                </div>
-                
-                <div class="table-responsive">
-                    <table id="invoiceTable">
-                        <thead>
-                            <tr>
-                                <th data-sort="name">Nama Pelanggan</th>
-                                <th data-sort="amount">Tagihan Bulanan</th>
-                                <th data-sort="status">Status</th>
-                            </tr>
-                        </thead>
-
-                        <!--  <td class="status-tunggak">Belum</td> -->
-                          <!-- <td class="status-lunas">Sudah</td> -->
-                           <!-- <td class="status-proses">Proses</td> -->
-                        <tbody>
-                            <tr style="display: none;">
-                                <td>Kas Lama</td>
-                                <td >Rp 32.000</td>
-                                <td class="status-lunas">Sudah</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk Ahyar Rizki</td>
-                                <td >Rp 15.000</td>
-                                <td class="status-lunas">Sudah</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk Arief Fazillah</td>
-                                <td>Rp 30.000</td>
-                                <td class="status-lunas">Sudah</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk Bahgia</td>
-                                <td>Rp 30.000</td>
-                                <td class="status-tunggak">Belum</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk Diaul Haq</td>
-                                <td>Rp 30.000</td>
-                               <td class="status-tunggak">Belum</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk Dzikri Arrahman</td>
-                                <td>Rp 30.000</td>
-                                <td class="status-tunggak">Belum</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk Edi Samsuar</td>
-                                <td>Rp 30.000</td>
-                                <td class="status-tunggak">Belum</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk Fikri Haikal</td>
-                                <td>Rp 30.000</td>
-                                <td class="status-tunggak">Belum</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk Hendra Saputra</td>
-                                <td>Rp 30.000</td>
-                                <td class="status-tunggak">Belum</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk Iqbal Luriansyah</td>
-                                <td>Rp 30.000</td>
-                                <td class="status-tunggak">Belum</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk M Yatim</td>
-                                <td>Rp 30.000</td>
-                                <td class="status-tunggak">Belum</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk Miftahul Fauzi</td>
-                                <td>Rp 30.000</td>
-                                <td class="status-tunggak">Belum</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk Munazir</td>
-                                <td>Rp 15.000</td>
-                                <td class="status-tunggak">Belum</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk Rahmatul Bahri</td>
-                                <td>Rp 30.000</td>
-                                <td class="status-tunggak">Belum</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk Raja Munandar</td>
-                                <td>Rp 30.000</td>
-                                <td class="status-tunggak">Belum</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk Saryulis</td>
-                                <td>Rp 30.000</td>
-                                <td class="status-tunggak">Belum</td>
-                            </tr>
-                            <tr>
-                                <td>Tgk Zawil</td>
-                                <td>Rp 30.000</td>
-                                <td class="status-tunggak">Belum</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div class="summary-pelanggan">
-                    <div class="summary-card total-card">
-                        <h3>Total Tagihan</h3>
-                        <p id="totalAmount">Rp0,00</p>
-                    </div>
-                    <div class="summary-card lunas-card">
-                        <h3>Jumlah Sudah Bayar</h3>
-                        <p id="lunasCount">0</p>
-                    </div>
-                    <div class="summary-card tunggak-card">
-                        <h3>Jumlah Belum Bayar</h3>
-                        <p id="tunggakCount">0</p>
-                    </div>
-                    <div class="summary-card proses-card">
-                        <h3>Jumlah Proses</h3>
-                        <p id="prosesCount">0</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sumber Saldo -->
-            <div class="card">
-                <h2 class="card-title">History</h2>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Tanggal</th>
-                                <th>Keterangan</th>
-                                <th>Jumlah</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                             <tr>
-                                <td>09 okt 2025</td>
-                                <td>TF Tgk M. Arief Fazillah</td>
-                                <td style="color: green;">Rp 30.000 </td>
-                            </tr>
-                            <tr>
-                                <td>08 okt 2025</td>
-                                <td>TF Tgk Ahyar Rizki</td>
-                                <td style="color: green;">Rp 15.000 </td>
-                            </tr>
-                            <tr>
-                                <td> - </td>
-                                <td>Kas Lama</td>
-                                <td style="color: green;">Rp 32.000 </td>
-                            </tr>
-                          
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-             <div class="card">
-                <h2 class="card-title">Indentity WiFi Active:</h2>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>SSID</th>
-                                <th>Password</th>
-                               
-                            </tr>
-                        </thead>
-                        <tbody>
-                              <td>Net-Home 5G</td>
-                                <td>******</td>
-                            </tr>
-                            <tr>
-                                <td>Net-Home</td>
-                                <td>******</td>
-                            </tr>
-                             <tr>
-                             <tr>
-                                <td>Net-Studio</td>
-                                <td>******</td>
-                            </tr>
-                        </tbody>
-                    </table>
-        </div>
-        
-        </div>
-        </div>
- 
-    <div class="card">
-        <h2>Metode Pembayaran</h2>
-        
-            <div class="card">
-              <h3><i class="fas fa-bank"></i> Bank Transfer</h3>
-            <div class="payment-method">
-                           
-                            <div class="payment-info">
-                                
-                                <!-- <h3><i class="fas fa-bank"></i> Bank Transfer</h3> -->
-                                <div class="account-number" onclick="copyToClipboard('7190360347', 'BSI')">
-                                    <span><strong>BSI</strong></span> <br>
-                                    <span>7190360347</span>
-                                    <button class="copy-btn"><i class="fas fa-copy"></i></button>
-                                </div>
-                                <div class="account-name">A/N EDI SAMSUAR</div>
-                            </div>
-            </div>
-
-             <div class="payment-method">
-                           
-                            <div class="payment-info">
-                                
-                              
-                               <div class="account-number" onclick="copyToClipboard('901994799040', 'SeaBank')">
-                                    <span><strong>SEABANK</strong></span> <br>
-                                    <span>901994799040</span>
-                                    <button class="copy-btn"><i class="fas fa-copy"></i></button>
-                                </div>
-                                <div class="account-name">A/N EDI SAMSUAR</div>
-                            </div>
-            </div>
-    <div class="payment-method">
-                           
-                            <div class="payment-info">
-                                
-                              
-                              <div class="account-number" onclick="copyToClipboard('05202200021771', 'BANK ACEH')">
-                                    <span><strong>BANK ACEH</strong></span> <br>
-                                    <span>05202200021771</span>
-                                    <button class="copy-btn"><i class="fa fa-copy"></i></button>
-                                </div>
-                                <div class="account-name">A/N EDI SAMSUAR</div>
-                            </div>
-            </div>
-            
-                           </div> 
-                       
-                   
-      
-    
-            <div class="card">
-              <h3><i class="fas fa-wallet"></i> E-Wallet</h3>
-            <div class="payment-method">
-                           
-                            <div class="payment-info">
-                                
-                                <div class="account-number" onclick="copyToClipboard('082217502205', 'E-Wallet')">
-                                    <span><strong>DANA, OVO, SHOPEEPAY, GOPAY</strong></span> <br>
-                                    <span>082217502205</span>
-                                    <button class="copy-btn"><i class="fas fa-copy"></i></button>
-                                </div>
-                                <div class="account-name">A/N EDI SAMSUAR</div>
-                            </div>
-            </div>
-
-
-            
-                           </div> 
-                        </div>
-            
-       
-    
-     <div class="qr-section">
-                    <div class="qr-info">
-                        <h3>Pembayaran via QRIS</h3>
-                        <p>QRIS (Quick Response Code Indonesian Standard) adalah sistem pembayaran dengan kode QR standar Indonesia yang dapat digunakan oleh seluruh penyelenggara jasa sistem pembayaran.</p>
-                        <p>Scan kode QR di samping untuk melakukan pembayaran dengan aplikasi e-wallet atau mobile banking Anda.</p>
-                        
-                        <div class="note">
-                            <p><i class="fas fa-info-circle"></i> Pastikan jumlah pembayaran sudah sesuai sebelum melakukan konfirmasi</p>
-                        </div>
-                    </div>
-                    
-                   <a style="text-decoration: none;" href="https://madinatuddiniyahbabussalam.dayah.id/media/2025.09/kode_qris_edi_samsuar_syh_tm1.png"> <div class="qr-code">
-                        <img src="qris.jpg" alt="QR Code Pembayaran">
-                        <p>Scan QR untuk pembayaran</p>
-                    </div> </a>
-                </div>
-            </div>
-            
-        </div>
+        <a href="javascript:history.back()" class="btn-kembali">
+            <i class="fas fa-arrow-left"></i> Kembali ke Halaman Sebelumnya
+        </a>
     </div>
-</div>
-<footer>
-            <div class="container">
-                <p>&copy;2025 Net-Studio WiFi Management</p>
-                
-            </div>
-        </footer>
-     <div class="toast" id="toast">
-        <i class="fas fa-check-circle"></i>
-        <span id="toast-message">Nomor rekening berhasil disalin!</span>
-    </div>
-    <script>
-
-        
-        // Data pengguna dengan display name terpisah
-        const validUsers = [
-            { 
-                username: "admin", 
-                password: "password123", 
-                displayName: "Administrator" 
-            },
-            { 
-                username: "user", 
-                password: "user123", 
-                displayName: "Operator" 
-            },
-            { 
-                username: "edi", 
-                password: "edi", 
-                displayName: "Tgk Edi Samsuar" 
-            },
-             { 
-                username: "arief", 
-                password: "arief123", 
-                displayName: "Tgk Muhammad Arief Fazillah" 
-            },
-             { 
-                username: "haikalfkr", 
-                password: "haikal123", 
-                displayName: "Tgk Fikri Haikal" 
-            },
-             { 
-                username: "rajamun", 
-                password: "raja123", 
-                displayName: "Tgk Raja Munandar" 
-            },
-             { 
-                username: "kang", 
-                password: "kang123", 
-                displayName: "Tgk Hendra Saputra" 
-            },
-             { 
-                username: "iqbal", 
-                password: "iqbal123", 
-                displayName: "Tgk Iqbal Luriansyah" 
-            },
-             { 
-                username: "munazir", 
-                password: "munazir123", 
-                displayName: "Tgk Munazir" 
-            },
-             { 
-                username: "rahmat", 
-                password: "rahmat123", 
-                displayName: "Tgk Rahmatul Bahri" 
-            },
-             { 
-                username: "bhgia", 
-                password: "bhgia123", 
-                displayName: "Tgk Bahgia" 
-            },
-             { 
-                username: "diaul", 
-                password: "diaul123", 
-                displayName: "Tgk Diaul Haq" 
-            },
-             { 
-                username: "atim", 
-                password: "atim123", 
-                displayName: "Tgk M. Yatim" 
-            },
-             { 
-                username: "ahyar", 
-                password: "ahyar123", 
-                displayName: "Tgk Ahyar Rizki" 
-            },
-             { 
-                username: "mizzy", 
-                password: "mizzy123", 
-                displayName: "Tgk Miftahul Fauzi" 
-            },
-             { 
-                username: "dzikri", 
-                password: "dzikriar123", 
-                displayName: "Tgk Dzikri Arrahman" 
-            },
-             { 
-                username: "fahmi", 
-                password: "fahmi123", 
-                displayName: "Syech Fahmy Official (Read Only)" 
-            },
-            { 
-                username: "saryulis", 
-                password: "saryulis123", 
-                displayName: "Tgk Saryulis" 
-            },
-
-        ];
-
-        // Fungsi untuk menangani login
-        function handleLogin(event) {
-            event.preventDefault();
-            
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            
-            // Cek kredensial
-            const isValidUser = validUsers.find(user => 
-                user.username === username && user.password === password
-            );
-            
-            if (isValidUser) {
-                // Simpan status login di sessionStorage
-                sessionStorage.setItem('isLoggedIn', 'true');
-                sessionStorage.setItem('username', username);
-                sessionStorage.setItem('displayName', isValidUser.displayName);
-                
-                // Redirect ke dashboard
-                window.location.href = '#dashboard';
-                showDashboard();
-            } else {
-                // Tampilkan pesan error
-                const errorMessage = document.getElementById('error-message');
-                errorMessage.style.display = 'block';
-            }
-        }
-
-        // Fungsi untuk logout
-        function handleLogout() {
-            // Hapus status login
-            sessionStorage.removeItem('isLoggedIn');
-            sessionStorage.removeItem('username');
-            sessionStorage.removeItem('displayName');
-            
-            // Kembali ke halaman login
-            window.location.href = '#login';
-            showLogin();
-        }
-
-        // Fungsi untuk menampilkan dashboard
-        function showDashboard() {
-            document.getElementById('login-page').style.display = 'none';
-            document.getElementById('dashboard-page').style.display = 'block';
-            
-            // Tampilkan nama pengguna di header
-            const displayName = sessionStorage.getItem('displayName');
-            if (displayName) {
-                document.getElementById('user-display-header').textContent = displayName;
-            }
-            
-            // Inisialisasi dashboard
-            initDashboard();
-        }
-
-        // Fungsi untuk menampilkan login
-        function showLogin() {
-            document.getElementById('login-page').style.display = 'flex';
-            document.getElementById('dashboard-page').style.display = 'none';
-            
-            // Reset form login
-            document.getElementById('login-form').reset();
-            document.getElementById('error-message').style.display = 'none';
-        }
-
-        // Cek status login saat halaman dimuat
-        function checkLoginStatus() {
-            const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-            
-            if (isLoggedIn === 'true') {
-                showDashboard();
-            } else {
-                showLogin();
-            }
-        }
-
-        // Inisialisasi dashboard
-        function initDashboard() {
-            const table = document.getElementById('invoiceTable');
-            const rows = Array.from(table.querySelectorAll('tbody tr'));
-            
-            // Hamburger menu functionality
-            const hamburgerBtn = document.getElementById('hamburger-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            hamburgerBtn.addEventListener('click', function() {
-                mobileMenu.classList.toggle('show');
-            });
-            
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!event.target.closest('.nav-container') && mobileMenu.classList.contains('show')) {
-                    mobileMenu.classList.remove('show');
-                }
-            });
-            
-            // Fungsi untuk menghitung total terkumpul dan sisa dibutuhkan
-            function updateFinancialSummary() {
-                let totalTerkumpul = 0;
-                
-                // Hitung total dari pelanggan yang lunas
-                rows.forEach(row => {
-                    const statusCell = row.cells[2];
-                    if (statusCell.classList.contains('status-lunas')) {
-                        const amountText = row.cells[1].textContent;
-                        const amount = parseInt(amountText.replace(/[^\d]/g, '')) || 0;
-                        totalTerkumpul += amount;
-                    }
-                });
-                
-                // Format totalTerkumpul
-                const formattedTerkumpul = new Intl.NumberFormat('id-ID', {
-                    style: 'currency',
-                    currency: 'IDR',
-                    minimumFractionDigits: 0
-                }).format(totalTerkumpul);
-                
-                // Set nilai totalTerkumpul
-                document.getElementById('totalTerkumpul').textContent = formattedTerkumpul;
-                
-                // Ambil nilai tagihan bulan ini
-                const tagihanBulanIniText = document.getElementById('tagihanBulanIni').textContent;
-                const tagihanBulanIni = parseInt(tagihanBulanIniText.replace(/[^\d]/g, '')) || 0;
-                
-                // Hitung sisa dibutuhkan
-                const sisaDibutuhkan = tagihanBulanIni - totalTerkumpul;
-                const formattedSisa = new Intl.NumberFormat('id-ID', {
-                    style: 'currency',
-                    currency: 'IDR',
-                    minimumFractionDigits: 0
-                }).format(sisaDibutuhkan);
-                
-                // Set nilai sisa dibutuhkan
-                document.getElementById('sisaDibutuhkan').textContent = formattedSisa;
-            }
-            
-            // Fungsi untuk mengupdate ringkasan
-            function updateSummary() {
-                let totalAmount = 0;
-                let lunasCount = 0;
-                let tunggakCount = 0;
-                let prosesCount = 0;
-                
-                rows.forEach(row => {
-                    if (row.style.display !== 'none') {
-                        const amountCell = row.cells[1];
-                        const statusCell = row.cells[2];
-                        
-                        // Mengambil nilai tagihan dan mengkonversi ke angka
-                        const amountText = amountCell.textContent;
-                        const amount = parseInt(amountText.replace(/[^\d]/g, '')) || 0;
-                        
-                        totalAmount += amount;
-                        
-                        // Menghitung status
-                        if (statusCell.classList.contains('status-lunas')) {
-                            lunasCount++;
-                        } else if (statusCell.classList.contains('status-tunggak')) {
-                            tunggakCount++;
-                        } else if (statusCell.classList.contains('status-proses')) {
-                            prosesCount++;
-                        }
-                    }
-                });
-                
-                // Memformat total tagihan
-                const formattedTotal = new Intl.NumberFormat('id-ID', {
-                    style: 'currency',
-                    currency: 'IDR',
-                    minimumFractionDigits: 0
-                }).format(totalAmount);
-                
-                // Update elemen HTML
-                document.getElementById('totalAmount').textContent = formattedTotal;
-                document.getElementById('lunasCount').textContent = lunasCount;
-                document.getElementById('tunggakCount').textContent = tunggakCount;
-                document.getElementById('prosesCount').textContent = prosesCount;
-                
-                // Update financial summary
-                updateFinancialSummary();
-            }
-            
-            // Fungsi untuk filter data
-            function filterTable(filter) {
-                rows.forEach(row => {
-                    const statusCell = row.cells[2];
-                    
-                    if (filter === 'all') {
-                        row.style.display = '';
-                    } else if (filter === 'lunas' && statusCell.classList.contains('status-lunas')) {
-                        row.style.display = '';
-                    } else if (filter === 'tunggak' && statusCell.classList.contains('status-tunggak')) {
-                        row.style.display = '';
-                    } else if (filter === 'proses' && statusCell.classList.contains('status-proses')) {
-                        row.style.display = '';
-                    } else {
-                        row.style.display = 'none';
-                    }
-                });
-                
-                updateSummary();
-            }
-            
-            // Fungsi untuk mencari data
-            function searchTable() {
-                const searchText = document.getElementById('searchInput').value.toLowerCase();
-                
-                rows.forEach(row => {
-                    const nameCell = row.cells[0];
-                    const name = nameCell.textContent.toLowerCase();
-                    
-                    if (name.includes(searchText)) {
-                        row.style.display = '';
-                    } else {
-                        row.style.display = 'none';
-                    }
-                });
-                
-                updateSummary();
-            }
-            
-            // Fungsi untuk mengurutkan data
-            function sortTable(column, order) {
-                const tbody = table.querySelector('tbody');
-                const sortedRows = Array.from(rows);
-                
-                sortedRows.sort((a, b) => {
-                    let aValue = a.cells[column].textContent;
-                    let bValue = b.cells[column].textContent;
-                    
-                    if (column === 1) { // Jika kolom tagihan
-                        aValue = parseInt(aValue.replace(/[^\d]/g, '')) || 0;
-                        bValue = parseInt(bValue.replace(/[^\d]/g, '')) || 0;
-                    }
-                    
-                    if (order === 'asc') {
-                        return aValue > bValue ? 1 : -1;
-                    } else {
-                        return aValue < bValue ? 1 : -1;
-                    }
-                });
-                
-                // Hapus baris yang ada
-                while (tbody.firstChild) {
-                    tbody.removeChild(tbody.firstChild);
-                }
-                
-                // Tambahkan baris yang sudah diurutkan
-                sortedRows.forEach(row => {
-                    tbody.appendChild(row);
-                });
-            }
-            
-            // Event listener untuk filter
-            document.querySelectorAll('.filter-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    document.querySelectorAll('.filter-btn').forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    
-                    this.classList.add('active');
-                    const filter = this.getAttribute('data-filter');
-                    filterTable(filter);
-                });
-            });
-            
-            // Event listener untuk pencarian
-            document.getElementById('searchInput').addEventListener('input', searchTable);
-            
-            // Event listener untuk pengurutan
-            document.querySelectorAll('th').forEach((header, columnIndex) => {
-                let order = 'asc';
-                
-                header.addEventListener('click', function() {
-                    sortTable(columnIndex, order);
-                    order = order === 'asc' ? 'desc' : 'asc';
-                });
-            });
-            
-            // Logout button functionality
-            document.querySelectorAll('.logout-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    if (confirm('Apakah Anda yakin ingin logout?')) {
-                        handleLogout();
-                    }
-                });
-            });
-            
-            // Inisialisasi ringkasan
-            updateSummary();
-        }
-
-        // Event listener untuk form login
-        document.getElementById('login-form').addEventListener('submit', handleLogin);
-
-        // Jalankan fungsi saat halaman dimuat
-        window.addEventListener('DOMContentLoaded', checkLoginStatus);
-        
-        // Handle hash changes
-        window.addEventListener('hashchange', function() {
-            if (window.location.hash === '#dashboard') {
-                showDashboard();
-            } else if (window.location.hash === '#login') {
-                showLogin();
-            }
-        });
-        
-        // Fungsi untuk menyalin teks ke clipboard
-        function copyToClipboard(text, provider) {
-            // Membuat textarea sementara untuk menyalin teks
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            
-            // Menampilkan notifikasi
-            showToast(`Nomor ${provider} berhasil disalin!`);
-        }
-        
-        // Fungsi untuk menampilkan toast notifikasi
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastMessage = document.getElementById('toast-message');
-            
-            toastMessage.textContent = message;
-            toast.classList.add('show');
-            
-            // Sembunyikan toast setelah 3 detik
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
-    </script>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script>
+     // Tambahkan efek suara saat hover (opsional)
+        document.querySelector('.btn-kembali').addEventListener('mouseenter', function() {
+            // Hapus komentar di bawah jika ingin menambahkan efek suara
+            ('https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3').play();
+        });
+</script>
 </html>
