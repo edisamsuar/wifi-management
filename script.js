@@ -181,7 +181,7 @@
             
             // Fungsi untuk menghitung total terkumpul dan sisa dibutuhkan
             function updateFinancialSummary() {
-                let totalTerkumpul = 0;
+                let totalTerkumpul = -455000;
                 
                 // Hitung total dari pelanggan yang lunas
                 rows.forEach(row => {
@@ -417,3 +417,4 @@
                 toast.classList.remove('show');
             }, 3000);
         }
+
